@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script src="lib/jquery.js"></script>
+    <script src="dist/jquery.validate.min.js"></script>
+    <script src="dist/localization/messages_zh.min.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            debugger;
+            $("#commentForm").validate({
+                onsubmit: true,// 是否在提交是验证  
+                onfocusout: false,// 是否在获取焦点时验证  
+                onkeyup: false,// 是否在敲击键盘时验证  
+
+                submitHandler: function (form) {  //通过之后回调  
+                    var param = $("#commentForm").serialize();
+                    $.ajax({
+                        url: "test.ashx",
+                        type: "post",
+                        dataType: "json",
+                        data: param,
+                        success: function (result) {
+                            if (result == 'success') {
+                                location.href = 'allRequisitionList.action';
+                            } else {
+                                var jsonObj = eval('(' + result + ')');
+                            }
+                        }
+                    });
+                },
+                invalidHandler: function (form, validator) {  //不通过回调  
+                    return false;
+                }
+            });
+        })
+    </script>
+</head>
+<body>
+    <form class="cmxform" id="commentForm" method="get">
+        <fieldset>
+            <legend>输入您的名字，邮箱，URL，备注。</legend>
+            <p>
+                <label for="cname">Name (必需, 最小两个字母)</label>
+                <input id="cname" name="name" minlength="2" type="text" required>
+            </p>
+
+            <p>
+                <input class="submit" type="submit" value="Submit">
+            </p>
+        </fieldset>
+    </form>
+</body>
+</html>

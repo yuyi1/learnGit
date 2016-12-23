@@ -1,0 +1,5 @@
+c:\users\administrator\documents\visual studio 2012\Projects\JqueryValidate_Demo\JqueryValidater\bin\JqueryValidater.dll
+c:\users\administrator\documents\visual studio 2012\Projects\JqueryValidate_Demo\JqueryValidater\bin\JqueryValidater.pdb
+c:\users\administrator\documents\visual studio 2012\Projects\JqueryValidate_Demo\JqueryValidater\obj\Debug\JqueryValidater.csprojResolveAssemblyReference.cache
+c:\users\administrator\documents\visual studio 2012\Projects\JqueryValidate_Demo\JqueryValidater\obj\Debug\JqueryValidater.dll
+c:\users\administrator\documents\visual studio 2012\Projects\JqueryValidate_Demo\JqueryValidater\obj\Debug\JqueryValidater.pdb
